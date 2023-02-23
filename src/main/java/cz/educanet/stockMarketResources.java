@@ -32,16 +32,17 @@ public class stockMarketResources {
         }
     }
 
-    public void createTrade(int amount, int price) {
+    public void createTrade(int amount, int price, int stockMarketID) {
         try (
                 Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/stock_market?user=root&password=");
                 PreparedStatement preparedStatement = connection.prepareStatement(
-                        "INSERT INTO stock_market.trade(amount, price) VALUES (' ?, ?')"
+                        "INSERT INTO stock_market.trade(amount, price, stock_market_id) VALUES (?, ?, ?)"
                 );
 
         ) {
             preparedStatement.setInt(1, amount);
             preparedStatement.setInt(2, price);
+            preparedStatement.setInt(3, stockMarketID);
             preparedStatement.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);

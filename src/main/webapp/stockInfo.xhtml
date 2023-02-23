@@ -18,7 +18,7 @@
          <h:inputText class="form-control" value="#{trade.price}" id="price"/>
       </div>
       <h:commandButton class="btn btn-primary mt-1" value="Create"
-                       action="#{stockMarketResources.createTrade(trade.amount, trade.price)}"/>
+                       action="#{stockMarketResources.createTrade(trade.amount, trade.price, trade.stockMarketID)}"/>
    </h:form>
 
 
