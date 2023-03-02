@@ -20,7 +20,6 @@
         <h:commandButton class="btn btn-primary mt-1" value="Create"
                          action="#{stockMarketResources.createStock(stockMarket.tickerSymbol, stockMarket.name)}"/>
     </h:form>
-
     <table class="table">
         <thead>
         <tr>
@@ -32,11 +31,11 @@
         <tbody>
             <tr>
                 <td>
-                    <h:link value="#{stock.name}" outcome="stockInfo.xhtml">
+                    <h:link value="#{stock.tickerSymbol}" outcome="stockInfo.xhtml">
                         <f:param name="id" value="#{stock.stockMarketID}"/>
                     </h:link>
                 </td>
-                <td>#{stock.tickerSymbol}</td>
+                <td>#{stock.name}</td>
                 <td> <h:link value="Update" styleClass="btn btn-warning" outcome="updateStock.xhtml">
                     <f:param name="id" value="#{stock.stockMarketID}"/>
                 </h:link></td>

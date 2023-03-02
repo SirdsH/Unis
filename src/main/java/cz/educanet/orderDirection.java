@@ -1,6 +1,21 @@
 package cz.educanet;
 
+
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
+
+@Named
+@RequestScoped
 public class orderDirection {
+
+    public orderDirection() {
+    }
+
+    public orderDirection(String name, int orderDirectionID) {
+        this.name = name;
+        this.orderDirectionID = orderDirectionID;
+    }
+
     private String name;
     private int orderDirectionID;
 

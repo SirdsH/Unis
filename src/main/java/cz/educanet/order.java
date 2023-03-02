@@ -1,7 +1,11 @@
 package cz.educanet;
 
-import java.time.LocalDateTime;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Named;
 
+import java.time.LocalDateTime;
+@Named
+@RequestScoped
 public class order {
     private int orderDirection;
     private int amount;
@@ -10,7 +14,17 @@ public class order {
     private LocalDateTime createdAt;
     private int orderID;
 
+    public order() {
+    }
 
+    public order(int orderDirection, int amount, int price, int stockMarketID, LocalDateTime createdAt, int orderID) {
+        this.orderDirection = orderDirection;
+        this.amount = amount;
+        this.price = price;
+        this.stockMarketID = stockMarketID;
+        this.createdAt = createdAt;
+        this.orderID = orderID;
+    }
 
     public int getOrderDirection() {
         return orderDirection;
